@@ -16,7 +16,6 @@
         <td>{{$curso->descripcion}}</td>
         <td>{{$curso->urlPdf}}</td>
         <td> <iframe src="{{ 'http://localhost/laravel/public/storage/imagenes/' .$curso->urlPdf }}"  frameborder="0"></iframe></td>
-        <td> <a href="{{ route('curso.show', $curso ->id) }}"> Mostrar </a></td>
         <td>
         <td> <a href="{{ route('curso.edit',$curso->id)}}">Editar</a></td>
     </td>

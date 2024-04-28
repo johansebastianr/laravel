@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cursos;
+use App\Models\User;
+use App\Models\Profile;
+use App\Models\Coche;
+use App\Models\Empleado;
 use Illuminate\Http\Request;
 
 class CursosController extends Controller
@@ -10,8 +14,17 @@ class CursosController extends Controller
     public function index()
     {
 
-        $cursos = Cursos::orderBy('id', 'desc')->get();
-        return view('curso.listar', compact('cursos'));
+    $temp = User::find(1);
+    return $temp->profile;
+    
+    $coche = Coche::find(1);
+    return $coche->empleado;
+
+    $empleado = Empleado::find(1);
+    return $empleado->coche;
+
+    //$cursos = Cursos::orderBy('id', 'desc')->get();
+    //return view('curso.listar', compact('cursos'));
 
     }
 
