@@ -7,6 +7,9 @@ use App\Models\User;
 use App\Models\Profile;
 use App\Models\Coche;
 use App\Models\Empleado;
+use App\Models\Categoría;
+use App\Models\Post;
+use App\Models\Video;
 use Illuminate\Http\Request;
 
 class CursosController extends Controller
@@ -14,14 +17,20 @@ class CursosController extends Controller
     public function index()
     {
 
-    $temp = User::find(1);
-    return $temp->profile;
+    $user = User::find(1);
+    return $user->profile;
     
     $coche = Coche::find(1);
     return $coche->empleado;
 
-    $empleado = Empleado::find(1);
-    return $empleado->coche;
+    $post = Post::find(1);
+    return $post->user;
+
+    $video = Video::find(1);
+    return $video->user;
+
+    $video = User::find(1);
+    return $user->video;
 
     //$cursos = Cursos::orderBy('id', 'desc')->get();
     //return view('curso.listar', compact('cursos'));

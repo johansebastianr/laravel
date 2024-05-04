@@ -8,6 +8,7 @@ use App\Http\Controllers\CarController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CursosController;
 use App\Http\Controllers\CuestionarioController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -61,3 +62,6 @@ Route::delete('cursos/{curso}',[CursosController::class,'destroy'])->name('curso
 Route::get('cursos/{curso}',[CursosController::class,'show'])->name('curso.show');
 Route::put('cursos/{curso}',[CursosController::class,'update'])->name('curso.update');
 Route::get('cursos/{curso}/editar',[CursosController::class,'edit'])->name('curso.edit');
+
+Route::get('profile/create',[ProfileController::class,'create']);
+Route::post('profile/store', [ProfileController::class,'store'])->name('profile.store');
