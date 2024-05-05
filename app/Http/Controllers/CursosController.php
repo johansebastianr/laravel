@@ -17,23 +17,23 @@ class CursosController extends Controller
     public function index()
     {
 
-    $user = User::find(1);
-    return $user->profile;
+    // $user = User::find(1);
+    // return $user->profile;
     
-    $coche = Coche::find(1);
-    return $coche->empleado;
+    // $coche = Coche::find(1);
+    // return $coche->empleado;
 
-    $post = Post::find(1);
-    return $post->user;
+    // $post = Post::find(1);
+    // return $post->user;
 
-    $video = Video::find(1);
-    return $video->user;
+    // $video = Video::find(1);
+    // return $video->user;
 
-    $video = User::find(1);
-    return $user->video;
+    // $video = User::find(1);
+    // return $user->video;
 
-    //$cursos = Cursos::orderBy('id', 'desc')->get();
-    //return view('curso.listar', compact('cursos'));
+    $cursos = Cursos::orderBy('id', 'desc')->get();
+    return view('curso.listar', compact('cursos'));
 
     }
 

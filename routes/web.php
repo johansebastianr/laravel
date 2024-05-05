@@ -9,6 +9,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CursosController;
 use App\Http\Controllers\CuestionarioController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ClienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,10 +26,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/curso/{dato1}/{dato2}',[CursoController::class,'hola'])->name('curso.show');
 Route::get('/primo/{numero}', [TallerController::class, 'esPrimo'])->name('curso.esPrimo');
-// Route::get('/curso',[CursoController::class,'create']);
-// Route::post('/curso',[CursoController::class,'store'])->name('curso.store');
 
 Route::get('/tallerprimo', [TallerController::class, 'create']);
 Route::post('/tallerprimo', [TallerController::class, 'store'])->name('taller.store');
@@ -57,6 +55,12 @@ Route::post('/primo', [PrimoController::class, 'primoStore'])->name('calcular.pr
 Route::get('/cursos/create',[CursosController::class,'create']);
 Route::post('/cursos/store', [CursosController::class,'store'])->name('curso.store');
 Route::get('/cursos/listar',[CursosController::class,'index'])->name('curso.index');
+
+//formulario en casa
+
+Route::get('/formularios/create',[ClienteController::class,'create']);
+Route::post('/formularios/store', [ClienteController::class,'store'])->name('formulario.store');
+Route::get('/formularios/view',[ClienteController::class,'index'])->name('formulario.index');
 
 Route::delete('cursos/{curso}',[CursosController::class,'destroy'])->name('curso.destroy');
 Route::get('cursos/{curso}',[CursosController::class,'show'])->name('curso.show');
